@@ -1,0 +1,23 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sign In</title>
+    <style>
+        .indent {
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="indent text-center text-dark">Sign In</h1>
+    <div class="text-center">
+        <form action="/" method="post">
+            <p>Email:</p>
+            <p><input type="text" name="Email" /></p>
+            <p>Password:</p>
+            <p><input type="text" name="Password" /></p>
+            <p><input type="submit" asp-controller="User" asp-action="CheckSignIn" value="Sign In" class="btn btn-outline-dark" /></p>
+        </form>
+
+    </div>
+</body>
+</html>

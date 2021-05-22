@@ -1,0 +1,26 @@
+﻿@{
+    var name = ViewBag.Message;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        About me!
+    </title>
+    <style>
+        .position {
+            margin-left: 85%
+        }
+
+        .NameUser {
+            margin-left: 90%
+        }
+    </style>
+</head>
+<body>
+    <div class="NameUser">
+        @name.Name
+        <a href="#">Add new post</a>
+    </div>
+</body>
+</html>
