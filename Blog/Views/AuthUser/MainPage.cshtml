@@ -13,14 +13,18 @@
         }
 
         .NameUser {
-            margin-left: 90%
+            margin-left: 90%; 
+            margin-block: 15px;
+            float: left;
         }
     </style>
 </head>
 <body>
-    <div class="NameUser">
-        @name.Name
-        <a href="#">Add new post</a>
-    </div>
+    @section Header{
+        <div class="NameUser">
+            @name
+            <a asp-controller="UserProfile" asp-action="UserProfile">Profile</a>
+        </div>
+    }
 </body>
 </html>

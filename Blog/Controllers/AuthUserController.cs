@@ -11,19 +11,13 @@ namespace Blog.Controllers
 {
     public class AuthUserController : Controller
     {
-        private User _ame;
         public AuthUserController()
         {
-        }
-        public IActionResult UserProfile(User ame)
-        {
-            _ame = ame;
-            ViewBag.Message = ame;
-            return View();
+
         }
         public IActionResult MainPage()
         {
-            
+            ViewBag.Message= Request.Cookies["name"];
             return View();
         }
     }

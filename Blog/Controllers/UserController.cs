@@ -8,12 +8,17 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace Blog.Controllers
 {
     public class UserController: Controller
     {
         private readonly UsersDbContext _db;
+
+        public object HttpCookie { get; private set; }
+
         public UserController(UsersDbContext db)
         {
             _db = db;
@@ -48,7 +53,10 @@ namespace Blog.Controllers
                 var checkUserInfo = _db.User.First(x => x.Email == email);
                 if (checkUserInfo.Password == password && checkUserInfo.Email == email)
                 {
-                    return RedirectToAction("UserProfile", "AuthUser", checkUserInfo);
+                    CookieOptions options = new CookieOptions();
+                    options.Expires = DateTime.Now.AddHours(1);
+                    Response.Cookies.Append("name", checkUserInfo.Name,options);
+                    return RedirectToAction("MainPage", "AuthUser");
                 }
                 else
                 {

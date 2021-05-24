@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <style>
+        #header
+        {
+            width: auto;
+            height:70px;
+            background-color: #a058d1;
+        }
         .gradient {
             background: #576284;
             background: -webkit-linear-gradient(to right, #576284, #b770a0);
@@ -16,9 +22,9 @@
     </style>
 </head>
 <body class="gradient">
-    <hr />
-    <div>
-        @RenderBody()
+    <div id="header">
+        @RenderSection("Header", false)
     </div>
+    @RenderBody()
 </body>
 </html>

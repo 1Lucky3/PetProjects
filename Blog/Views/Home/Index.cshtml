@@ -4,19 +4,23 @@
         About me!
     </title>
     <style>
-        .position{
-            margin-left:85%
+        .position {
+            margin-left: 85%;
+            margin-block: 15px;
+            float: left;
         }
     </style>
     
 </head>
 <body>
-    <div class="position">
-        <a class="btn btn-outline-dark" asp-controller="User" asp-action="SignIn">Sign In</a>
-        <a class="btn btn-outline-dark" asp-controller="User" asp-action="Registration">Registration</a>
-    </div>
+    @section Header{ 
+        <div class="position">
+            <a class="btn btn-outline-dark" asp-controller="User" asp-action="SignIn">Sign In</a>
+            <a class="btn btn-outline-dark" asp-controller="User" asp-action="Registration">Registration</a>
+        </div>
+    }
     <div>
-        
+
     </div>
 </body>
 </html>
